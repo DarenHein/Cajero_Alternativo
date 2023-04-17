@@ -1,4 +1,7 @@
 import javax.swing.JFrame;
+
+import java.awt.Font;
+
 import javax.swing.*;
 
 public class Menu extends JFrame{
@@ -22,8 +25,24 @@ public class Menu extends JFrame{
         panel.setLayout(null);
         this.getContentPane().add(panel); 
         eti();
-        campos(); 
-        botones(); 
+       // campos(); 
+        //botones(); 
+    }
+    public void eti(){
+        e = new JLabel("CAJERTO ATM"); 
+        e.setBounds(220, 30, 180, 30);
+        e.setFont(new Font("arial",Font.BOLD,22)); 
+        panel.add(e); 
+
+        e2 = new JLabel("Saldo : "); 
+        e2.setBounds(100, 120, 120, 20);
+        e2.setFont(new Font("arial",Font.BOLD,18)); 
+        panel.add(e2); 
+
+        e3 = new JLabel("Retiro"); 
+        e3.setBounds(100,200,120,20); 
+        e3.setFont(new Font("arial",Font.BOLD,18)); 
+        panel.add(e3); 
     }
 
 }
