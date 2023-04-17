@@ -1,10 +1,16 @@
-import javax.swing.JFrame;
-
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
 public class Menu extends JFrame{
+    private int csaldo; 
+    private int cdeposito; 
+    private int cretiro; 
+    private String campo_saldo; 
+    private String campo_retiro; 
+    private String campo_deposito; 
     private int ancho = 600; 
     private int largo = 600; 
     private JPanel panel;
@@ -51,16 +57,16 @@ public class Menu extends JFrame{
     }
     public void campos(){
         c = new JTextField("0"); 
-        c.setBounds(350, 120, 120, 25);
+        c.setBounds(350, 120, 120, 25);// saldo
         c.setEditable(false);
         panel.add(c); 
 
-        c2 = new JTextField(); 
-        c2.setBounds(350, 200, 120, 25);
+        c2 = new JTextField("0"); 
+        c2.setBounds(350, 200, 120, 25);// retiro
         panel.add(c2); 
 
-        c3 = new JTextField(); 
-        c3.setBounds(350, 280, 120, 25);
+        c3 = new JTextField("0"); 
+        c3.setBounds(350, 280, 120, 25);// deposito
         panel.add(c3); 
 
 
@@ -69,10 +75,44 @@ public class Menu extends JFrame{
     public void botones(){
         b = new JButton("Siguiente");
         b.setBounds(350, 450, 120, 25);
+        b.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+             
+             campo_saldo = c.getText(); 
+             campo_deposito = c3.getText(); 
+             campo_retiro = c2.getText(); 
+             csaldo = Integer.parseInt(campo_saldo); 
+             cretiro = Integer.parseInt(campo_retiro); 
+             cdeposito = Integer.parseInt(campo_deposito); 
+             
+             if(cretiro == 0){
+                
+                csaldo += cdeposito; 
+                campo_saldo = String.valueOf(csaldo); 
+                c.setText(campo_saldo);
+                c3.setText("0");
+  
+             }
+             
+
+            }
+        }); 
+
+       
         panel.add(b);  
 
         b2 = new JButton("Salis");
         b2.setBounds(150, 450, 120, 25);
+        b2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               
+            }
+            
+        });
         panel.add(b2);  
     }
 
