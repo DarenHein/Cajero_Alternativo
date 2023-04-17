@@ -87,14 +87,6 @@ public class Menu extends JFrame{
              cretiro = Integer.parseInt(campo_retiro); 
              cdeposito = Integer.parseInt(campo_deposito); 
              
-             if(cretiro == 0){
-                
-                csaldo += cdeposito; 
-                campo_saldo = String.valueOf(csaldo); 
-                c.setText(campo_saldo);
-                c3.setText("0");
-  
-             }
              
 
             }
