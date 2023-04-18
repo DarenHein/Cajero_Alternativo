@@ -16,7 +16,7 @@ public class Menu extends JFrame{
     private JPanel panel;
     private JLabel e,e1,e2,e3,e4; 
     private JTextField c,c1,c2,c3; 
-    private JButton b,b1,b2; 
+    private JButton b,b1,b2,b3; 
 
     public Menu(){
        this.setSize(ancho, largo);
@@ -73,8 +73,8 @@ public class Menu extends JFrame{
     }
 
     public void botones(){
-        b = new JButton("Siguiente");
-        b.setBounds(350, 450, 120, 25);
+        b = new JButton("Deposito");
+        b.setBounds(250, 450, 120, 25);
         b.addActionListener(new ActionListener() {
 
             @Override
@@ -96,16 +96,24 @@ public class Menu extends JFrame{
         panel.add(b);  
 
         b2 = new JButton("Salis");
-        b2.setBounds(150, 450, 120, 25);
+        b2.setBounds(100, 450, 120, 25);
         b2.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                Login obj = new Login(); 
+                obj.setVisible(true);
+                setVisible(false);
                
             }
             
         });
         panel.add(b2);  
+
+        b3 = new JButton("Retiro"); 
+        b3.setBounds(400, 450, 120, 25);
+        panel.add(b3);
     }
 
 }
