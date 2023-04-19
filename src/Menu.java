@@ -101,7 +101,7 @@ public class Menu extends JFrame{
        
         panel.add(b);  
 
-        b2 = new JButton("Salis");
+        b2 = new JButton("Salir");
         b2.setBounds(100, 450, 120, 25);
         b2.addActionListener(new ActionListener() {
 
