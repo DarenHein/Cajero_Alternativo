@@ -56,7 +56,7 @@ public class Menu extends JFrame{
         panel.add(e4); 
     }
     public void campos(){
-        c = new JTextField("0"); 
+        c = new JTextField("20"); 
         c.setBounds(350, 120, 120, 25);// saldo
         c.setEditable(false);
         panel.add(c); 
@@ -80,12 +80,24 @@ public class Menu extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
              
-             campo_saldo = c.getText(); 
-             campo_deposito = c3.getText(); 
-             campo_retiro = c2.getText(); 
-             csaldo = Integer.parseInt(campo_saldo); 
-             cretiro = Integer.parseInt(campo_retiro); 
-             cdeposito = Integer.parseInt(campo_deposito); 
+                try {
+                   String csaldo = c.getText(); 
+                   String cretiro = c2.getText(); 
+                   int num = Integer.parseInt(csaldo); 
+                   int num2 = Integer.parseInt(cretiro); 
+                   int resultado = num + num2; 
+                   System.out.println(resultado);
+                   String resultado2 = String.valueOf(resultado); 
+                   System.out.println(resultado2);
+                   c.setText(resultado2);
+                   c2.setText("0");
+                } catch (Exception e34) {
+                    // TODO: handle exception
+                    JOptionPane.showMessageDialog(null,"Caracter invalido intenta otra vez ");
+                }
+
+            
+             
              
              
 
