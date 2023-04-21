@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Menu extends JFrame{
+
     private int csaldo; 
     private int cdeposito; 
     private int cretiro; 
@@ -35,29 +36,29 @@ public class Menu extends JFrame{
         botones(); 
     }
     public void eti(){
-        e = new JLabel("CAJERTO ATM"); 
-        e.setBounds(220, 30, 180, 30);
+        e = new JLabel("BANCO PESITOS CAJERO"); 
+        e.setBounds(150, 30, 300, 30);
         e.setFont(new Font("arial",Font.BOLD,22)); 
         panel.add(e); 
 
-        e2 = new JLabel("Saldo : "); 
-        e2.setBounds(100, 120, 120, 20);
+        e2 = new JLabel("Saldo :                       $"); 
+        e2.setBounds(100, 120, 220, 20);
         e2.setFont(new Font("arial",Font.BOLD,18)); 
         panel.add(e2); 
 
-        e3 = new JLabel("Deposito"); 
-        e3.setBounds(100,200,120,20); 
+        e3 = new JLabel("Deposito :                 $"); 
+        e3.setBounds(100,200,220,20); 
         e3.setFont(new Font("arial",Font.BOLD,18)); 
         panel.add(e3); 
 
-        e4 = new JLabel("Retiro"); 
-        e4.setBounds(100, 280, 120, 20);
+        e4 = new JLabel("Retiro :                      $"); 
+        e4.setBounds(100, 280, 220, 20);
         e4.setFont(new Font("arial",Font.BOLD,18)); 
         panel.add(e4); 
     }
     public void campos(){
         c = new JTextField("20"); 
-        c.setBounds(350, 120, 120, 25);// saldo
+        c.setBounds(350, 120, 220, 25);// saldo
         c.setEditable(false);
         panel.add(c); 
 
